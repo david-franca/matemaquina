@@ -4,10 +4,11 @@ import React from "react";
 import Button from "./Button";
 import { Grid, GridItem, Icon } from "@chakra-ui/react";
 import { FiDelete } from "react-icons/fi";
+import { TbClearAll } from "react-icons/tb";
 
 const buttons = [
   {
-    label: "AC",
+    label: <Icon as={TbClearAll} />,
     variant: "text",
   },
   {
@@ -87,7 +88,7 @@ export default function Keyboard() {
       w="full"
       alignItems="center"
       justifyItems="center"
-      gap={3}
+      gap={{ base: 2, md: 3 }}
     >
       {buttons.map(({ label, colspan, rowspan, variant }, i) => (
         <GridItem
