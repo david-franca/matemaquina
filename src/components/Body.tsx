@@ -48,10 +48,9 @@ export default function Calculator() {
   );
 
   return (
-    <Center w="full" h="100vh" bg="blue.100">
+    <Center w="full" h="100vh" bg="blue.100" _dark={{ bg: "blue.900" }}>
       <Container
         display="flex"
-        border="1px solid"
         bg="gray.50"
         w={{ base: "full", md: "sm" }}
         h={{ base: "100vh", md: "fit-content" }}
