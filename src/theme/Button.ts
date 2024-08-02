@@ -26,6 +26,13 @@ export const Button = defineStyleConfig({
       w: "full",
       h: "full",
     },
+    thin: {
+      p: "4",
+      rounded: "2xl",
+      fontSize: "3xl",
+      w: "fit-content",
+      h: "fit-content",
+    },
   },
   variants: {
     default: {
@@ -35,6 +42,15 @@ export const Button = defineStyleConfig({
         borderColor: "blue.400",
         color: "blue.400",
       },
+      _dark: {
+        bg: "gray.700",
+        border: "none",
+        _hover: {
+          bg: "gray.800",
+          borderColor: "blue.500",
+          color: "blue.500",
+        },
+      },
     },
     action: {
       bg: "blue.100",
@@ -42,6 +58,15 @@ export const Button = defineStyleConfig({
         bg: "blue.200",
         borderColor: "blue.500",
         color: "blue.500",
+      },
+      _dark: {
+        bg: "blue.700",
+        border: "none",
+        _hover: {
+          bg: "blue.800",
+          borderColor: "blue.500",
+          color: "blue.500",
+        },
       },
     },
     text: {
@@ -52,6 +77,15 @@ export const Button = defineStyleConfig({
         color: "gray.700",
       },
       color: "gray.600",
+      _dark: {
+        bg: "gray.500",
+        color: "white",
+        border: "none",
+        _hover: {
+          bg: "gray.600",
+          borderColor: "gray.700",
+        },
+      },
     },
     special: {
       border: "none",
@@ -61,6 +95,11 @@ export const Button = defineStyleConfig({
         "-3px 4px 11px 0px #B0DFFF inset, -9px 13px 23px 0px rgba(0, 163, 255, 0.65)",
       _hover: { bg: "blue.500", color: "white" },
       zIndex: 1,
+      _dark: {
+        bg: "blue.500",
+        color: "white",
+        _hover: { bg: "blue.600", color: "white" },
+      },
     },
   },
   defaultProps: {

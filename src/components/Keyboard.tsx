@@ -1,84 +1,94 @@
 "use client";
 
-import React from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
+
 import Button from "./Button";
-import { Grid, GridItem, Icon } from "@chakra-ui/react";
-import { FiDelete } from "react-icons/fi";
-import { TbClearAll } from "react-icons/tb";
 
-const buttons = [
-  {
-    label: <Icon as={TbClearAll} />,
-    variant: "text",
-  },
-  {
-    label: <Icon as={FiDelete} />,
-    variant: "text",
-  },
-  {
-    label: "/",
-    variant: "action",
-  },
-  {
-    label: "*",
-    variant: "action",
-  },
-  {
-    label: "7",
-  },
-  {
-    label: "8",
-  },
-  {
-    label: "9",
-  },
-  {
-    label: "-",
-    variant: "action",
-  },
-  {
-    label: "4",
-  },
-  {
-    label: "5",
-  },
-  {
-    label: "6",
-  },
-  {
-    label: "+",
-    variant: "action",
-  },
-  {
-    label: "1",
-  },
-  {
-    label: "2",
-  },
-  {
-    label: "3",
-  },
-  {
-    label: "=",
-    variant: "special",
-    rowspan: 2,
-  },
-  {
-    label: "0",
-    colspan: 2,
-  },
-  {
-    label: ".",
-  },
-];
+interface KeyboardProps {
+  handleInput: (data: string) => void;
+}
 
-export default function Keyboard() {
+export default function Keyboard({ handleInput }: Readonly<KeyboardProps>) {
   function generateId() {
     return (
       Math.random().toString(36).substring(2, 15) +
       Math.random().toString(36).substring(2, 15)
     );
   }
+
+  function clearAll() {
+    handleInput("clear");
+  }
+
+  function clearOne() {
+    handleInput("clearOne");
+  }
+
+  const buttons = [
+    {
+      label: "clear",
+      variant: "text",
+    },
+    {
+      label: "clearOne",
+      variant: "text",
+    },
+    {
+      label: "/",
+      variant: "action",
+    },
+    {
+      label: "*",
+      variant: "action",
+    },
+    {
+      label: "7",
+    },
+    {
+      label: "8",
+    },
+    {
+      label: "9",
+    },
+    {
+      label: "-",
+      variant: "action",
+    },
+    {
+      label: "4",
+    },
+    {
+      label: "5",
+    },
+    {
+      label: "6",
+    },
+    {
+      label: "+",
+      variant: "action",
+    },
+    {
+      label: "1",
+    },
+    {
+      label: "2",
+    },
+    {
+      label: "3",
+    },
+    {
+      label: "=",
+      variant: "special",
+      rowspan: 2,
+    },
+    {
+      label: "0",
+      colspan: 2,
+    },
+    {
+      label: ".",
+    },
+  ];
 
   return (
     <Grid
@@ -99,7 +109,11 @@ export default function Keyboard() {
           h="full"
           rounded="2xl"
         >
-          <Button label={label} variant={variant} />
+          <Button
+            label={label}
+            variant={variant}
+            onClick={() => handleInput(label)}
+          />
         </GridItem>
       ))}
     </Grid>
