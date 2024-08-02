@@ -47,7 +47,7 @@ export default function Display({
   }
 
   return (
-    <Flex flexDir="column" gap={{ base: 4, md: 2 }} py={{ base: 20, md: 14 }}>
+    <Flex flexDir="column" gap={{ base: 4, md: 2 }} py={{ base: 16, md: 10 }}>
       <Text
         alignSelf="flex-end"
         color="gray.500"

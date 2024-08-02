@@ -1,13 +1,13 @@
 "use client";
 
+import { evaluate } from "mathjs";
 import { useCallback, useState } from "react";
+import { IoMoon, IoSunny } from "react-icons/io5";
 
 import { Center, Container, IconButton, useColorMode } from "@chakra-ui/react";
 
 import Display from "./Display";
 import Keyboard from "./Keyboard";
-import { evaluate } from "mathjs";
-import { IoMoon, IoSunny } from "react-icons/io5";
 
 export default function Calculator() {
   const [expression, setExpression] = useState("0");
@@ -64,7 +64,7 @@ export default function Calculator() {
       >
         <IconButton
           aria-label="Change color mode"
-          icon={colorMode === "light" ? <IoSunny /> : <IoMoon />}
+          icon={colorMode === "light" ? <IoMoon /> : <IoSunny />}
           size="thin"
           onClick={toggleColorMode}
         />
